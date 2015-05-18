@@ -1,0 +1,11 @@
+{
+    "manifest_version": 2,
+    "name": "Collapser News",
+    "version": "1.0",
+    "description": "Collapse those hacker news comments!",
+    "permissions": [
+        "tabs",
+        "https://news.ycombinator.com/",
+        "http://news.ycombinator.com/"
+    ]
+}
