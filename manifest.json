@@ -7,5 +7,12 @@
         "tabs",
         "https://news.ycombinator.com/",
         "http://news.ycombinator.com/"
-    ]
+    ],
+    "content_scripts": [{
+    	"matches": [
+	    	"http://news.ycombinator.com/item*",
+	    	"https://news.ycombinator.com/item*"
+	    	],
+    	"js": ["collapse.js"]
+    	}]
 }
