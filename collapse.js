@@ -22,11 +22,11 @@ function getNextSpacer(curr) {
 }
 
 function hideBySpacer(spacer) {
-    parents(spacer,6).setAttribute("style", "display:none;");
+    parents(spacer,6).style.display = "none";
 }
 
 function showBySpacer(spacer) {
-    parents(spacer,6),removeAttribute("style");
+    parents(spacer,6).style.display = "block";
 }
 
 function collapse(event) {
