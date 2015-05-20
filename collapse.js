@@ -21,12 +21,17 @@ function getNextSpacer(curr) {
     return next_spacer;
 }
 
-function hideBySpacer(spacer) {
-    parents(spacer,6).style.display = "none";
+function hideBySpacer(spacer, id) {
+    var comment = parents(spacer,6);
+    comment.style.display = "none";
+    console.log(id);
+    comment.setAttribute("collapser", id);
 }
 
 function showBySpacer(spacer) {
-    parents(spacer,6).style.display = "block";
+    var comment = parents(spacer,6);
+    comment.style.display = "initial";
+    comment.removeAttribute("collapser");
 }
 
 function collapse(event) {
@@ -41,7 +46,7 @@ function collapse(event) {
     /* hide child comments */
     while(spacer_width < Number(getNextSpacer(spacer).getAttribute("width"))) {
         spacer = getNextSpacer(spacer);
-        hideBySpacer(spacer);
+        hideBySpacer(spacer, item.id);
     }
 }
 
