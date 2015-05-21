@@ -30,6 +30,7 @@ function collapse(event) {
     var spacer = parents(item,4).children[0].children[0];
     var spacer_width = Number(spacer.getAttribute("width"));
 	var text = parents(item,2).nextSibling.nextSibling;
+    var next_spacer;
 
     if(item.getAttribute("collapsed") == "true") {
     	item.innerHTML = "[-]";
@@ -44,7 +45,8 @@ function collapse(event) {
 	    }
 
     	/* show child comments */
-    	while(spacer_width < Number(getNextSpacer(spacer).getAttribute("width"))) {
+	    next_spacer = getNextSpacer(spacer);
+    	while(next_spacer && spacer_width < Number(next_spacer.getAttribute("width"))) {
     		var comment;
     		spacer = getNextSpacer(spacer);
 		    comment = parents(spacer,6);
@@ -69,9 +71,10 @@ function collapse(event) {
 	    }
 
 	    /* hide child comments */
-	    while(spacer_width < Number(getNextSpacer(spacer).getAttribute("width"))) {
+	    next_spacer = getNextSpacer(spacer);
+	    while(next_spacer && spacer_width < Number(next_spacer.getAttribute("width"))) {
 	    	var comment;
-	        spacer = getNextSpacer(spacer);
+	        spacer = next_spacer;
 		    comment = parents(spacer,6);
 		    comment.style.display = "none";
 		    if(!comment.getAttribute("collapser")) {
