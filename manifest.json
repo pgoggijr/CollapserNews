@@ -3,6 +3,11 @@
     "name": "Collapser News",
     "version": "1.0",
     "description": "Collapse those hacker news comments!",
+    "icons": { 
+    	"128": "res/icon_128.png",
+    	"48": "res/icon_48.png",
+    	"16": "res/icon_16.png"
+	},
     "permissions": [
         "tabs",
         "https://news.ycombinator.com/",
