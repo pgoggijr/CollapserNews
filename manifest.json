@@ -11,7 +11,7 @@
 	"author": "Peter Goggi Jr.",
     "permissions": [
     	"tabs",
-        "http://news.ycombinator.com/"
+        "http://news.ycombinator.com/",
         "https://news.ycombinator.com/"
     ],
     "content_scripts": [{
