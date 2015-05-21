@@ -56,6 +56,7 @@ function collapse(event) {
 			    comment.style.display = "initial";
 			    comment.removeAttribute("collapser");
 			}
+		    next_spacer = getNextSpacer(next_spacer);
     	}
 
     } else {
@@ -80,6 +81,7 @@ function collapse(event) {
 		    if(!comment.getAttribute("collapser")) {
 			    comment.setAttribute("collapser", item.id);
 		    }
+		    next_spacer = getNextSpacer(next_spacer);
 	    }
 	}
 }
