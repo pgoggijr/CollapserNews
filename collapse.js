@@ -74,7 +74,9 @@ function collapse(event) {
 	        spacer = getNextSpacer(spacer);
 		    comment = parents(spacer,6);
 		    comment.style.display = "none";
-		    comment.setAttribute("collapser", item.id);
+		    if(!comment.getAttribute("collapser")) {
+			    comment.setAttribute("collapser", item.id);
+		    }
 	    }
 	}
 }
