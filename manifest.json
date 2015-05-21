@@ -2,16 +2,17 @@
     "manifest_version": 2,
     "name": "Collapser News",
     "version": "1.0",
-    "description": "Collapse those hacker news comments!",
+    "description": "Adds [+] and [-] collapse buttons to Hacker News comment threads",
     "icons": { 
     	"128": "res/icon_128.png",
     	"48": "res/icon_48.png",
     	"16": "res/icon_16.png"
 	},
+	"author": "Peter Goggi Jr.",
     "permissions": [
-        "tabs",
-        "https://news.ycombinator.com/",
+    	"tabs",
         "http://news.ycombinator.com/"
+        "https://news.ycombinator.com/"
     ],
     "content_scripts": [{
     	"matches": [
