@@ -29,61 +29,61 @@ function collapse(event) {
     var item = event.target;
     var spacer = parents(item,4).children[0].children[0];
     var spacer_width = Number(spacer.getAttribute("width"));
-	var text = parents(item,2).nextSibling.nextSibling;
+    var text = parents(item,2).nextSibling.nextSibling;
     var next_spacer;
 
     if(item.getAttribute("collapsed") == "true") {
-    	item.innerHTML = "[-]";
-	    item.setAttribute("collapsed",false);
+        item.innerHTML = "[-]";
+        item.setAttribute("collapsed",false);
 
-    	/* show this items comment */
-    	text.style.display = "initial";
+        /* show this items comment */
+        text.style.display = "initial";
 
-	    /* sometimes replies are next to, rather than inside the comment */
-	    if(text.nextSibling != null && text.nextSibling.getAttribute("class") == "reply") {
-	    	text.nextSibling.style.display = "initial";
-	    }
+        /* sometimes replies are next to, rather than inside the comment */
+        if(text.nextSibling != null && text.nextSibling.getAttribute("class") == "reply") {
+            text.nextSibling.style.display = "initial";
+        }
 
-    	/* show child comments */
-	    next_spacer = getNextSpacer(spacer);
-    	while(next_spacer && spacer_width < Number(next_spacer.getAttribute("width"))) {
-    		var comment;
-    		spacer = getNextSpacer(spacer);
-		    comment = parents(spacer,6);
+        /* show child comments */
+        next_spacer = getNextSpacer(spacer);
+        while(next_spacer && spacer_width < Number(next_spacer.getAttribute("width"))) {
+            var comment;
+            spacer = getNextSpacer(spacer);
+            comment = parents(spacer,6);
 
-		    /* show only if this item collapsed it */
-		    if(comment.getAttribute("collapser") == item.id) {
-			    comment.style.display = "initial";
-			    comment.removeAttribute("collapser");
-			}
-		    next_spacer = getNextSpacer(next_spacer);
-    	}
+            /* show only if this item collapsed it */
+            if(comment.getAttribute("collapser") == item.id) {
+                comment.style.display = "initial";
+                comment.removeAttribute("collapser");
+            }
+            next_spacer = getNextSpacer(next_spacer);
+        }
 
     } else {
-	    item.innerHTML = "[+]";
-	    item.setAttribute("collapsed",true);
+        item.innerHTML = "[+]";
+        item.setAttribute("collapsed",true);
 
-	    /* hide this items comment */
-	    text.style.display = "none";
+        /* hide this items comment */
+        text.style.display = "none";
 
-	    /* sometimes replies are next to, rather than inside the comment */
-	    if(text.nextSibling != null && text.nextSibling.getAttribute("class") == "reply") {
-	    	text.nextSibling.style.display = "none";
-	    }
+        /* sometimes replies are next to, rather than inside the comment */
+        if(text.nextSibling != null && text.nextSibling.getAttribute("class") == "reply") {
+            text.nextSibling.style.display = "none";
+        }
 
-	    /* hide child comments */
-	    next_spacer = getNextSpacer(spacer);
-	    while(next_spacer && spacer_width < Number(next_spacer.getAttribute("width"))) {
-	    	var comment;
-	        spacer = next_spacer;
-		    comment = parents(spacer,6);
-		    comment.style.display = "none";
-		    if(!comment.getAttribute("collapser")) {
-			    comment.setAttribute("collapser", item.id);
-		    }
-		    next_spacer = getNextSpacer(next_spacer);
-	    }
-	}
+        /* hide child comments */
+        next_spacer = getNextSpacer(spacer);
+        while(next_spacer && spacer_width < Number(next_spacer.getAttribute("width"))) {
+            var comment;
+            spacer = next_spacer;
+            comment = parents(spacer,6);
+            comment.style.display = "none";
+            if(!comment.getAttribute("collapser")) {
+                comment.setAttribute("collapser", item.id);
+            }
+            next_spacer = getNextSpacer(next_spacer);
+        }
+    }
 }
 
 /* initialize collapse buttons */
