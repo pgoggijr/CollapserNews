@@ -12,7 +12,8 @@ function getNextSpacer(curr) {
     var next_thing = parent.nextSibling.nextSibling
     var next_spacer = undefined;
 
-    if(next_thing != null && next_thing.getAttribute("class") == "athing") {
+    if(next_thing != null
+        && next_thing.getAttribute("class").indexOf("athing") > -1) {
         next_spacer = next_thing
             .children[0]
             .children[0]
