@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "name": "Collapser News",
-    "version": "1.0",
+    "version": "1.0.1",
     "description": "Adds [+] and [-] collapse buttons to Hacker News comment threads",
-    "icons": { 
+    "icons": {
     	"128": "res/icon_128.png",
     	"48": "res/icon_48.png",
     	"16": "res/icon_16.png"
