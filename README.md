@@ -1,3 +1,5 @@
+This project will no longer be updated as this functionality is now replaced by Hacker News' own implementation.  Yay!
+
 #Collapser News
 
 Browser extension for adding [+] and [-] collapse buttons to [Hacker News](http://news.ycombinator.com/) comment threads
